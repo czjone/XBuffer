@@ -2,18 +2,18 @@
 
 using namespace XBF;
 
-#define UTEST
-#ifdef UTEST
-class stu : public XBuffer<stu> {
-};
+// #define UTEST
+// #ifdef UTEST
+// class stu : public XBuffer<stu> {
+// };
 
-class mygroup : public XBuffer<mygroup> {
-};
+// class mygroup : public XBuffer<mygroup> {
+// };
 
-int XBuferTest()
-{
-    mygroup group;
-    // group.ToBytes();
-}
+// int XBuferTest()
+// {
+//     mygroup group;
+//     // group.ToBytes();
+// }
 
-#endif
+// #endif
