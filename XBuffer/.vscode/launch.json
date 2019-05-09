@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/XBuffer",
+            // "args": ["-h"],
+            "args": [
+                "-O${workspaceFolder}/BuildCodes",
+                "-I${workspaceFolder}/Simple/testmessage.h",
+                "-C",
+                "-J",
+                "-G",
+                "-L",
+                "-S"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        }
+    ]
+}
