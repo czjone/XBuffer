@@ -5,7 +5,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/XBuffer",
+            "program": "${workspaceFolder}/build/XBuffer-Tool",
             // "args": ["-h"],
             "args": [
                 "-O${workspaceFolder}/BuildCodes",
@@ -16,6 +16,19 @@
                 "-L",
                 "-S"
             ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "(lldb) Test",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/XBuffer-test",
+            // "args": ["-h"],
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

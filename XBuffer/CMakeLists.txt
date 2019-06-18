@@ -62,6 +62,7 @@ endif()
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/libs/boost
     ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/XBuffer-src
 )
 if(APPLE)
     SET(targetPlatform "mac")
@@ -72,3 +73,8 @@ ADD_EXECUTABLE(XBuffer-Tool ${SRC_LIST})
 
 AUX_SOURCE_DIRECTORY(Xbuffer-src/CPP XBufferLIB_SRC_LIST)
 ADD_LIBRARY(XBuffer ${XBufferLIB_SRC_LIST})
+
+# xbuffer test
+AUX_SOURCE_DIRECTORY(Xbuffer-src/CPP XBufferLIB_SRC_LIST)
+AUX_SOURCE_DIRECTORY(Xbuffer-src/Test XBufferLIB_SRC_LIST)
+ADD_EXECUTABLE(XBuffer-test ${XBufferLIB_SRC_LIST})
