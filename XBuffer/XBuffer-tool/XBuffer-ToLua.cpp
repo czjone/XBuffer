@@ -13,23 +13,26 @@ std::string XBF::ToLuaHandler::getFExt(){
     return "lua";
 }
 
-
 Result XBF::ToLuaHandler::Parse()
 {
-   auto& a = this->analyzerPtr->GetMessage();
+    auto& a = this->analyzerPtr->GetMessage();
+    this->outcode.append(this->analyzerPtr->GetNamespaceName());
+    this->outcode.append(" = {");
+    this->outcode.append("\r\n");
     for (auto b : a) {
-        this->outcode.append("struct ");
+        this->outcode.append("\t");
         this->outcode.append(b.Name);
-        this->outcode.append("{\r\n");
+        this->outcode.append("= { ");
         for (auto d : b.Fields) {
-            ;
-            this->outcode.append("\t");
-            this->outcode.append("int ");
             this->outcode.append(d.name);
-            this->outcode.append(";\r\n");
+            this->outcode.append(" = ");
+            this->outcode.append("nil");
+            this->outcode.append(",");
         }
-        this->outcode.append("};\r\n");
+        this->outcode.append(" },\r\n");
     }
+    this->outcode.append(" };\r\nreturn ");
+    this->outcode.append(this->analyzerPtr->GetNamespaceName());
     // std::cout << this->outcode << std::endl;
     return XBF::SUCCESS;
 }

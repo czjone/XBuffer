@@ -30,7 +30,16 @@ public:
     XBuffer();
     virtual ~XBuffer();
 
+    /**
+     * 根据命令参数初始化生成器
+     * @param argc 参数长度
+     * @param argv 参数
+     */
     Result Init(int argc, char **argv);
+
+    /**
+     * 生成代码
+     */
     Result Gernerator();
 private:
     static void initAnalyzerSupports(CommandAnalyzer &cmdAnalyzer);

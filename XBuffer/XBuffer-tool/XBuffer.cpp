@@ -12,14 +12,14 @@
 
 using namespace XBF;
 
-#define CMDKEY_INPUT_MESSAGE 'I'
-#define CMDKEY_OUTDIR 'O'
-#define CMDKEY_HELP "help"
-#define CMDKEY_TO_LANGAGE_JAVA 'J'
-#define CMDKEY_TO_LANGAGE_CSHARP 'S'
-#define CMDKEY_TO_LANGAGE_CPP 'C'
-#define CMDKEY_TO_LANGAGE_GOLANG 'G'
-#define CMDKEY_TO_LANGAGE_LUA 'L'
+#define CMDKEY_INPUT_MESSAGE 'I'    //输入文件 
+#define CMDKEY_OUTDIR 'O'           //输出目录
+#define CMDKEY_HELP "help"          //帮助
+#define CMDKEY_TO_LANGAGE_JAVA 'J'  //生成java
+#define CMDKEY_TO_LANGAGE_CSHARP 'S'//生成CSharp
+#define CMDKEY_TO_LANGAGE_CPP 'C'   //生成cpp
+#define CMDKEY_TO_LANGAGE_GOLANG 'G'//生成golang
+#define CMDKEY_TO_LANGAGE_LUA 'L'   //生成lua
 
 template <typename T>
 inline void
@@ -93,6 +93,7 @@ Result XBuffer::Init(int argc, char** argv)
     std::string infile(opt.get_value_str(CMDKEY_INPUT_MESSAGE));
     //初始化分析器
     auto analyzer = XBF::Analyzer::ParseWithFile(infile);
+
     //根据命令初始化处理器
     makehandler<ToCPPHandler>(opt, CMDKEY_TO_LANGAGE_CPP, handlers, analyzer);
     makehandler<ToCShapHandler>(opt, CMDKEY_TO_LANGAGE_CSHARP, handlers, analyzer);
@@ -100,7 +101,6 @@ Result XBuffer::Init(int argc, char** argv)
     makehandler<ToJavaHandler>(opt, CMDKEY_TO_LANGAGE_JAVA, handlers, analyzer);
     makehandler<ToLuaHandler>(opt, CMDKEY_TO_LANGAGE_LUA, handlers, analyzer);
 
-    //设置输出
 
     return XBF::SUCCESS;
 }

@@ -14,7 +14,6 @@ public:
     virtual ~ToLuaHandler();
     ToLuaHandler(const ToLuaHandler &) = delete;
     ToLuaHandler &operator=(const ToLuaHandler &) = delete;
-
 public:
     virtual Result Parse() override;
     virtual std::string getFExt() override;

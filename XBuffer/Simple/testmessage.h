@@ -1,22 +1,19 @@
-struct student
-{
-    int id;
-    string name;
-    int age;
-    string sc;
-};
 
-struct teacher
-{
-    string name;
-    int age;
-};
+namespace testsimple {
 
-struct message
-{
-    int id;
-    string name;
-    string des;
-    teacher[] stues;
-    teacher teacher;
-};
+    struct simplemessage
+    {
+        bool bool_;
+        double number_;
+        string string_;
+    };
+
+    struct fullmessage
+    {
+        bool[] boolarr_;
+        double[] numberarr_;
+        string[] stringarr_;
+        simplemessage maparr_;
+        simplemessage[] maparr_
+    };
+}
