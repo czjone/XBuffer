@@ -10,37 +10,38 @@ public:
     std::string name;
     int age;
 
-    XBUF_INIT({
-        SetFieldValue(this->id, 1);
-        SetFieldValue(this->name, std::string("test name"));
-        SetFieldValue(this->age, 3);
-    });
+    // XBUF_INIT({
+    //     SetFieldValue(this->id, 1);
+    //     SetFieldValue(this->name, std::string("test name"));
+    //     SetFieldValue(this->age, 3);
+    // });
 
-    XBUF_TOBYTES({
+    // XBUF_TOBYTES({
 
-    });
+    // });
 };
 
 class mygroup : public XBuffer {
 public:
     int id;
-    stu stuInfo;
+    // stu stuInfo;
 
-    XBUF_INIT({
-        // SetFieldValue(this->id, 1);
-        // SetFieldValue(this->stuInfo, {});
-    })
+    // XBUF_INIT({
+    //     // SetFieldValue(this->id, 1);
+    //     // SetFieldValue(this->stuInfo, {});
+    // })
 
-    XBUF_TOBYTES({
+    // XBUF_TOBYTES({
 
-    })
+    // })
 };
 
 int XBuferTest()
 {
-    mygroup t;
-    auto data = t.ToBytes();
-    std::shared_ptr<mygroup> tptr = XBuffer::Load<mygroup>(data);
+    // mygroup t;
+    // auto data = t.ToBytes();
+    // std::shared_ptr<mygroup> tptr = XBuffer::Load<mygroup>(data);
+    return 0;
 }
 
 int main()

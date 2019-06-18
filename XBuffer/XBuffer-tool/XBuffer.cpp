@@ -42,8 +42,7 @@ void XBuffer::initAnalyzerSupports(CommandAnalyzer& cmdAnalyzer)
 {
     cmdAnalyzer.add_flag(CMDKEY_HELP, 'h', "List all stuffs.");
     cmdAnalyzer.add_option_str(CMDKEY_INPUT_MESSAGE, "", "=input message file");
-    cmdAnalyzer.add_option_str(CMDKEY_OUTDIR, "",
-        "=ouput gernerate code folder.");
+    cmdAnalyzer.add_option_str(CMDKEY_OUTDIR, "", "=ouput gernerate code folder.");
 
     cmdAnalyzer.add_flag(CMDKEY_TO_LANGAGE_CPP, "gernerate c++ code");
     cmdAnalyzer.add_flag(CMDKEY_TO_LANGAGE_CSHARP, "gernerate c# code");
